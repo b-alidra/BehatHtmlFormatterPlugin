@@ -140,8 +140,20 @@ body {
             background-color: @color-failed;
             background-image: none;
           }
+          .screenshot {
+              display: inline-block;
+              max-width: 100%;
+              border: 1px solid #AAA;
+              margin: 5px 0;
+          }
         }
       }
     }
+  }
+}
+#screenshot_modal .modal-lg {
+  width: calc(100% - 20px);
+  .screenshot {
+    max-width: 100%;
   }
 }

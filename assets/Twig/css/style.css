@@ -163,7 +163,15 @@ body {
   background-color: #f56956;
   background-image: none;
 }
-.list-group-item.break {
-  padding: 1px;
-  background-color: #808080;
+#scenario-overview .feature .details .panel.failed .screenshot {
+  display: inline-block;
+  max-width: 100%;
+  border: 1px solid #AAA;
+  margin: 5px 0;
+}
+#screenshot_modal .modal-lg {
+  width: calc(80%);
+}
+#screenshot_modal .modal-lg .screenshot {
+  max-width: 100%;
 }

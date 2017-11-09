@@ -201,6 +201,9 @@
                                                 {% if step.exception is not null %}
                                                     <br>
                                                     <p style="padding-left:2em ; color:gray">({{ step.exception }})</p>
+                                                    {% if scenario.getScreenshotPath() %}
+                                                        <img class="img screenshot" src="{{ scenario.getScreenshotPath() }}"/>
+                                                    {% endif %}
                                                 {% endif %}
                                                 {% if step.output is not null %}
                                                     <br>
@@ -222,6 +225,14 @@
                 </div>
             {% endfor %}
         {% endfor %}
+    </div>
+</div>
+<div id="screenshot_modal" class="modal fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog  modal-lg">
+        <div class="modal-content">
+            <div class="modal-body">
+            </div>
+        </div>
     </div>
 </div>
 <!-- /container -->
@@ -330,6 +341,11 @@
         $('.filters #feature-all-filter').click(function () {
             showOverview();
             $('.feature').show();
+        });
+        $('img.screenshot').click(function () {
+            $("#screenshot_modal .modal-body").html("");
+            $(this).clone().appendTo("#screenshot_modal .modal-body");
+            $("#screenshot_modal").modal({});
         });
     });
 
